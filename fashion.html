@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search - Blingcute
+    </title>
+    <link rel="stylesheet" href="home.css">
+    <!--Icons cdn font-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <style>
+        .search_section {
+            min-height: 45vh;
+            background-color: white;
+
+        }
+
+        .search-heading {
+            text-align: center;
+            padding-top: 80px;
+            font-family: 'Roboto', sans-serif;
+            font-size: 1.6rem;
+            font-weight: lighter;
+            color: #3f3f3f;
+        }
+
+        .search-field {
+
+            margin-top: 40px;
+            margin-left: 250px;
+            display: flexbox;
+            justify-content: space-between;
+            height: 100px;
+        }
+
+        .search-input {
+            flex: right;
+            border: none;
+            border-bottom: 1.8px solid rgb(197, 194, 194);
+            height: 50px;
+            width: 500px;
+            padding: 10px;
+            padding-right: 60px;
+            box-sizing: border-box;
+            font-size: large;
+            padding-left: 20px;
+            font-family: 'Times New Roman', Times, serif;
+        }
+
+        .search-button {
+            flex: left;
+            height: 50px;
+            width: 180px;
+            border: none;
+            cursor: pointer;
+            background-color: #000;
+            color: white;
+            border-radius: 1.5rem;
+            font-size: medium;
+            font-weight: lighter;
+            font-family: 'Times New Roman', Times, serif;
+            letter-spacing: 1px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Adding navbar -->
+    <script src="navigationbar.js"></script>
+    
+    <!-- Adding Sticky navbar -->
+    <script src="stickyNavBar.js"></script>
+    <section class="search_section">
+        <h1 class="search-heading">Search for products on our site</h1>
+        <div class="search-field">
+            <input type="text" class="search-input" placeholder="Search our store">
+            <button class="search-button">Search</button>
+        </div>
+    </section>
+    <!-- Last section -->
+    <script src="lastSection.js"></script>
+</body>
+
+</html>

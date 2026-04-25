@@ -1,0 +1,268 @@
+/* ==========================================================
+   GLOBAL RESET AND SETUP 
+   ========================================================== */
+:root {
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        background-color: #ffffff;
+        font-family: 'Times New Roman', Times, serif;
+        min-height: 100vh;
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+        margin-left: 85px;
+        margin-right: 85px;
+        font-size: medium;
+        overflow: auto;
+    }
+}
+
+.section1 {
+    height: 100vh;
+    display: flex;
+
+}
+
+.section1 .left {
+    flex: 50%;
+    background-color: rgb(247, 234, 236);
+
+}
+
+.section1 .right {
+    flex: 50%;
+    background-image: url(images/image.png);
+    background-size: cover;
+    background-position: center;
+
+}
+
+.left .s1_heading {
+    font-size: 5rem;
+    font-family: 'Dancing Script', cursive;
+    font-weight: lighter;
+    color: rgb(117, 114, 114);
+    text-align: center;
+    margin-top: 10%;
+}
+
+.left .s1_text {
+    font-size: 5rem;
+    color: #6c998e;
+    font-weight: 700;
+    text-align: center;
+    padding: 30px;
+    font-family: 'Merriweather';
+}
+
+.left .s1_btn {
+    font-size: 1rem;
+    font-family: 'Times New Roman', Times, serif;
+    border-radius: 2rem;
+    width: 30%;
+    height: 9%;
+    border: none;
+    background-color: rgb(102, 100, 100);
+    color: white;
+    display: block;
+    margin: 0 auto;
+}
+
+.s1_btn:hover {
+    background-color: rgba(241, 126, 126, 0.897);
+}
+
+
+
+/* Bouquet section */
+.section2 {
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.inner_container {
+    height: 60vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.main_heading {
+    font-size: 2rem;
+    color: rgb(78, 75, 75);
+    font-family: 'Roboto' sans-serif;
+    font-weight: lighter;
+    padding-bottom: 8px;
+    text-align: center;
+    margin-top: 30px;
+}
+
+.picture_box {
+    position: relative;
+    max-width: min-content;
+
+    height: auto;
+
+}
+
+.picture_box img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    position: relative;
+    display: inline-block;
+}
+
+img:hover {
+    transform: scale(1.1);
+    transition: transform 0.3s ease;
+    cursor: pointer;
+
+}
+
+.heart-icon {
+    position: absolute;
+    top: 3%;
+    left: 90%;
+    width: 24px;
+    height: 24px;
+    transform: translate(-50%, -50%);
+    font-size: 24px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    color: rgb(233, 12, 49);
+}
+
+.picture_box:hover .heart-icon {
+    opacity: 1;
+}
+
+.heart-icon::before {
+    content: "\f004";
+    /* Unicode for solid heart in Font Awesome */
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+}
+
+.caption {
+    text-align: center;
+    font-weight: bold;
+    font-family: sans-serif;
+    color: #333333ab;
+    padding: 10px 10px;
+}
+
+.seemore {
+    font-size: 1rem;
+    font-family: 'Times New Roman', Times, serif;
+    border-radius: 2rem;
+    width: 10%;
+    height: 10%;
+    border: none;
+    background-color: rgb(85, 19, 30);
+    color: white;
+    display: block;
+}
+
+.seemore:hover {
+    background-color: rgba(241, 126, 126, 0.897);
+}
+
+#bouquet {
+    /* offset anchor scrolling so section is not hidden under the fixed sticky bar */
+    scroll-margin-top: 250px;
+    /* must be >= 250px */
+}
+
+.customization_section {
+    height: 100vh;
+    display: flex;
+    background-color: rgba(248, 243, 248, 0.911);
+}
+
+.customization_left {
+    flex: 45%;
+    background-image: url(images/customization.png);
+    background-size: cover;
+    background-position: center;
+}
+
+.customization_right {
+    flex: 55%;
+    background-color: rgba(248, 243, 248, 0.911);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: 60px 0;
+    margin-left: 60px;
+    border: 2.5px solid rgb(116, 92, 116);
+    border-right: none;
+    position: relative;
+
+}
+
+.customization_right::before {
+    content: "";
+    position: absolute;
+    top: -25px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50px;
+    height: 50px;
+    background-color: rgb(116, 92, 116);
+    clip-path: polygon(50% 0, 100% 50%, 50% 100%, 0% 50%);
+    /* top-left corner, top-right corner, 
+    Middle Right, botom-right, bottome-left, middle left */
+}
+
+.customization_right::after {
+    content: "";
+    position: absolute;
+    bottom: -25px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50px;
+    height: 50px;
+    background-color: rgb(116, 92, 116);
+    clip-path: polygon(50% 0, 100% 50%, 50% 100%, 0% 50%);
+}
+
+
+
+.customization_right .customization_heading {
+    display: inline-block;
+    font-size: 1.5rem;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 150;
+    letter-spacing: 5px;
+    color: rgb(54, 35, 35);
+    text-align: center;
+    background-color: rgb(209, 68, 68);
+    padding: 30px 50px;
+    clip-path: polygon(0 0, 100% 0, 95% 50%, 100% 100%, 0% 100%, 5% 50%);
+    /* top-left corner, top-right corner, 
+    Middle Right, botom-right, bottome-left, middle left */
+
+}
+
+.customization_right .customization_text {
+    font-size: 1.4rem;
+    font-weight: lighter;
+    font-family: 'Roboto', serif;
+    color: rgb(151, 142, 142);
+    text-align: center;
+    padding-left: 90px;
+    letter-spacing: 1px;
+    text-align: start;
+}
+
+.customization_right .customization_text2 {
+    padding-right: 90px;
+    text-align: start;
+
+    padding-left: 120px;
+}

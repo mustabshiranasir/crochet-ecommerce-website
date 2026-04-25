@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
+
+    <title>Search</title>
+    <style>
+        .search-container {
+            display: flex;
+            flex-direction: column;
+            padding-top: 40px;
+            margin: 30px;
+        }
+
+        .search-header {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 50px;
+        }
+
+        .search-input {
+            border: none;
+            border-bottom: 2px solid rgba(128, 128, 128, 0.253);
+            width: 100%;
+            font-size: 1.1rem;
+            font-family: 'Times New Roman', Times, serif;
+            padding: 10px;
+        }
+
+        .search-input:focus {
+            border-bottom: 2px solid black;
+        }
+
+        .cross_symbol {
+            font-size: 5.5rem;
+            font-weight: 100;
+            font-family: 'Roboto', sans-serif;
+
+            cursor: pointer;
+            display: inline-block;
+            transition: transform 0.8s ease;
+            /* smooth rotation */
+        }
+        
+
+        .rotate-forward {
+            transform: rotate(180deg);
+            /* rotate forward on hover */
+        }
+
+        .rotate-back {
+            transform: rotate(0deg);
+            /* rotate back when leaving */
+        }
+
+        .search-hint {
+            font-size: medium;
+            font-family: sans-serif;
+            color: grey;
+            font-weight: 500;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="search-container">
+        <div class="search-header">
+            <input type="text" id="searchInput" class="search-input" placeholder="Search our store">
+            <span class="cross_symbol">×</span>
+        </div>
+        <p class="search-hint">
+            #Type at least 1 character to search # Hit enter to search or ESC to close
+        </p>
+    </div>
+
+    <script>
+        const cross = document.querySelector(".cross_symbol");
+
+        cross.addEventListener("mouseenter", () => {
+            cross.classList.remove("rotate-back");   // remove backward class
+            cross.classList.add("rotate-forward");   // add forward rotation
+            cross.textContent = "−";                  // change to minus
+        });
+
+        cross.addEventListener("mouseleave", () => {
+            cross.classList.remove("rotate-forward"); // remove forward class
+            cross.classList.add("rotate-back");       // rotate back smoothly
+            cross.textContent = "×";                  // back to cross
+        });
+
+        // click → go home
+        cross.addEventListener("click", () => {
+            window.location.href = "index.html";
+        });
+    </script>
+
+</body>
+
+</html>
